@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+.article-card {
+  background-color: rgb(30, 89, 17);
+  padding: 10px 0;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.single-article-card {
+  background-color: rgb(255, 192, 203);
+}

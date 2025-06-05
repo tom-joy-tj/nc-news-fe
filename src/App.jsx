@@ -12,16 +12,20 @@ function App() {
     <Router>
       <Header /> 
 
+      <div id="root-contents">
       <main>
         <Routes>
           <Route path="/" element={<Article_list/>} />
           <Route path = "/articles/:article_id" element={<Single_article />}  />
         </Routes>
       </main>
-      
+      </div>
+
       <Footer />
     </Router>
   )
 }
  
 export default App
+
+

@@ -16,8 +16,8 @@ export default function Article_list() {
 
     return (
         <section>
-            <h2>Latest News</h2>
             <ul className="article-list">
+            <h2>Latest News</h2>
                 {articles.map((singleArticle) => (
                     <li key={singleArticle.article_id} className="article-card">
                         <Link to={`/articles/${singleArticle.article_id}`}>

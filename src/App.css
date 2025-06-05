@@ -1,51 +1,10 @@
-#root {
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+#root-contents {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.article-card {
-  background-color: rgb(30, 89, 17);
-  padding: 10px 0;
-  border-radius: 5px;
-  padding: 1em;
 }
 
 .article-list {
@@ -54,6 +13,126 @@
   gap: 15px;
 }
 
+.article-list h2 {
+  color: rgb(0, 0, 0);  
+  list-style: none;     
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+
+.article-card {
+  background-color: rgba(50, 50, 50, 0.593);
+  padding: 10px 0;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.article-card h3 {
+  font-family: 'Playfair Display', serif; 
+  color: rgb(255, 255, 255); 
+}
+
 .single-article-card {
-  background-color: rgb(255, 192, 203);
+  background-color: rgba(50, 50, 50, 0.593);
+}
+
+.comments-list {
+  list-style-type: none; /* removes bullet points */
+  padding-left: 0;       /* removes default left indentation */
+  margin: 0;
+}
+
+.comments-list li {
+  background-color: rgba(50, 50, 50, 0.593);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+body {
+  background-image: 
+  linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0)),
+  url('./assets/NYSkyline.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* 🔐 Keeps it still */
+  min-height: 100vh;
+  margin: 0;
+}
+
+.site-header {
+  background-color: rgba(202, 3, 3, 0.806);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  width: 100vw;        
+  position: relative;  
+  left: 0;             
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 5px double white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.site-header h1 {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+}
+
+.nav-links {
+  list-style: none;      
+  padding: 0;
+  margin: 0;
+  display: flex;           
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;                   /* Ensure it spans full width */
+}
+
+.nav-links li {
+  color: rgb(0, 0, 0);  
+  list-style: none;     
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav-links a {
+  color: rgb(0, 0, 0);             
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  background-color: rgba(202, 3, 3, 0.806);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  width: 100vw;     
+  position: relative;  
+  left: 0;             
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 5px double white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }

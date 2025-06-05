@@ -34,16 +34,9 @@ export const patchArticleVotes = (article_id, voteChange) => {
   }
 
   export const postComment = (article_id, username, body) => {
-    return fetch(`https://api/articles/${article_id}/comments`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ username, body })
-    }).then((res) => {
-        if (!res.ok) {
-            throw new Error("Failed to post comment");
-        }
-        return res.json();
-    });
-};
+    return newsAPI.post(`articles/${article_id}/comments`, {
+        username,
+        body,
+        })
+        .then((res) => res.data)
+    };

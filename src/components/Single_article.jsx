@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"
 import { fetchSingleArticle } from "../api/api.js"
 import Comments_list from "./Comments_list.jsx"
-import { patchArticleVotes } from "../api/api.js";
+import { patchArticleVotes } from "../api/api.js"
 
 export default function Single_article () {
     const { article_id } = useParams()
@@ -12,15 +12,11 @@ export default function Single_article () {
     const [isVoting, setIsVoting] = useState(false)
     const [hasVoted, setHasVoted] = useState(false)
 
-    const [commentBody, setCommentBody] = useState("")
-    const [isPosting, setIsPosting] = useState(false)
-    const [postError, setPostError] = useState(null)
-    const [postSuccess, setPostSuccess] = useState(null)
 
     useEffect(() => {
         fetchSingleArticle(article_id)
-            .then(({ article }) => {
-                setArticle(article)
+            .then((data) => {
+                setArticle(data.article)
             })
             .catch((err) => {
                 console.log(err);
@@ -47,50 +43,13 @@ export default function Single_article () {
                     ...currArticle,
                     votes: currArticle.votes - voteChange
                 }))
-                setHasVoted((prev) => !prev);
-                setError("Failed to update vote.");
+                setHasVoted((prev) => !prev)
+                setError("Failed to update vote.")
             })
             .finally(() => {
-                setIsVoting(false);
+                setIsVoting(false)
             });
     }
-
-    const handlePostComment = (e) => {
-        e.preventDefault()
-        setIsPosting(true)
-        setPostError(null)
-        setPostSuccess(null)
-    
-        if (!commentBody.trim()) {
-            setPostError("Cannot submit blank comment.")
-            setIsPosting(false)
-            return
-        }
-    
-        const username = "jessjelly" // hardcoded for now
-    
-        postComment(article.article_id, username, commentBody)
-            .then(({ comment }) => {
-                setPostSuccess("Comment posted!")
-                setCommentBody("")
-    
-                // Optimistically show comment (or refetch if preferred)
-                // Optionally: trigger re-fetch in Comments_list
-    
-            })
-            .catch((err) => {
-                console.error(err);
-                setPostError("Failed to post comment.");
-            })
-            .finally(() => {
-                setIsPosting(false);
-            });
-    };
-
-
-
-
-
 
     if (error) return <p>{error}</p>;
     if (!article) return <p>Loading...</p>
@@ -114,9 +73,9 @@ export default function Single_article () {
                     marginBottom: "1rem"
                 }}
                 title={hasVoted ? "Remove vote" : "Upvote"}
->
-    👍 Votes: {article.votes}
-</p>
+            >
+            👍 Votes: {article.votes}
+            </p>
 
             <p><strong>💬 Comments:</strong> {article.comment_count} </p>
             <button onClick={() => setShowComments((prev) => !prev)}>

@@ -6,10 +6,11 @@ export default function Header() {
             <h1>The Daily Bugle</h1>
             <nav>
                 <ul className="nav-links">
-                    <li><Link to="/">Newsroom</Link></li>
-                    {/* Add more links here later */}
+                    <li><Link to="/">📰 Newsroom</Link></li>
+                    <li>⚽️ Football</li>
+                    <li>🧑‍🍳 Cooking</li>
+                    <li>👾 Coding</li>
                 </ul>
             </nav>
         </header>
-    )
-}
+    )}
